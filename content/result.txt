@@ -1,0 +1,4 @@
+This is the merged text: {
+This is first file
+This is second file
+}
