@@ -1,10 +1,47 @@
-const _ = require('lodash');
+const {readFile,writeFile} = require('fs').promises;
 
-const arr = [1,[2,6,7,8,[3,66,55,[4,[5,[6,[7,[8,[9,[10]]]]]]]]]];
+// const util = require('util');
 
-console.log(arr);
-const deepArray = _.flattenDeep(arr);
+// const readFilePromise = util.promisify(readFile);
+// const writeFilePromise = util.promisify(writeFile);
 
-console.log(deepArray);
+const start = async() => {
+    try{
+        const first = await readFile('./content/first.txt','utf8');
+        const second = await readFile('./content/result.txt','utf8');
 
-//This is new comment
+        await writeFile('./content/result.txt',"\nThis is data entry place",{flag: 'a'});
+
+        console.log(first, second);
+    }catch(error){
+        console.log(error);
+    }
+}
+start();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const getText = (path) => {
+//     return new Promise((resolve, reject) => {
+//         readFile(path, 'utf8', (error, data) => {
+//             if (error) {
+//                 reject(error);
+//             } else {
+//                 resolve(data);
+//             }
+//         });
+//     });
+// }

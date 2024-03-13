@@ -1,4 +1,3 @@
-This is the merged text: {
-This is first file
-This is second file
-}
+
+This is data entry place
+This is data entry place
